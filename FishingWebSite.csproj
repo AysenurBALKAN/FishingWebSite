@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EB07028-0003-4EE6-B370-89BA09D3CD80}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FishingWebSite</RootNamespace>
+    <AssemblyName>FishingWebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fishing\about.html" />
+    <Content Include="fishing\blog.html" />
+    <Content Include="fishing\contact.html" />
+    <Content Include="fishing\css\bootstrap.min.css" />
+    <Content Include="fishing\css\element.css" />
+    <Content Include="fishing\css\font-awesome.min.css" />
+    <Content Include="fishing\css\style.css" />
+    <Content Include="fishing\detail.html" />
+    <Content Include="fishing\fonts\fontawesome-webfont.svg" />
+    <Content Include="fishing\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fishing\img\1.png" />
+    <Content Include="fishing\img\10.jpg" />
+    <Content Include="fishing\img\11.jpg" />
+    <Content Include="fishing\img\12.jpg" />
+    <Content Include="fishing\img\13.jpg" />
+    <Content Include="fishing\img\14.jpg" />
+    <Content Include="fishing\img\15.jpg" />
+    <Content Include="fishing\img\16.jpg" />
+    <Content Include="fishing\img\17.jpg" />
+    <Content Include="fishing\img\18.jpg" />
+    <Content Include="fishing\img\19.jpg" />
+    <Content Include="fishing\img\2.jpg" />
+    <Content Include="fishing\img\20.jpg" />
+    <Content Include="fishing\img\21.png" />
+    <Content Include="fishing\img\22.jpg" />
+    <Content Include="fishing\img\23.jpg" />
+    <Content Include="fishing\img\24.jpg" />
+    <Content Include="fishing\img\25.jpg" />
+    <Content Include="fishing\img\26.jpg" />
+    <Content Include="fishing\img\27.jpg" />
+    <Content Include="fishing\img\28.jpg" />
+    <Content Include="fishing\img\29.jpg" />
+    <Content Include="fishing\img\3.jpg" />
+    <Content Include="fishing\img\30.jpg" />
+    <Content Include="fishing\img\31.jpg" />
+    <Content Include="fishing\img\32.jpg" />
+    <Content Include="fishing\img\33.jpg" />
+    <Content Include="fishing\img\34.jpg" />
+    <Content Include="fishing\img\35.jpg" />
+    <Content Include="fishing\img\36.jpg" />
+    <Content Include="fishing\img\37.jpg" />
+    <Content Include="fishing\img\38.jpg" />
+    <Content Include="fishing\img\39.jpg" />
+    <Content Include="fishing\img\4.jpg" />
+    <Content Include="fishing\img\40.jpg" />
+    <Content Include="fishing\img\41.jpg" />
+    <Content Include="fishing\img\42.jpg" />
+    <Content Include="fishing\img\43.jpg" />
+    <Content Include="fishing\img\44.jpg" />
+    <Content Include="fishing\img\45.jpg" />
+    <Content Include="fishing\img\46.jpg" />
+    <Content Include="fishing\img\47.jpg" />
+    <Content Include="fishing\img\48.jpg" />
+    <Content Include="fishing\img\49.jpg" />
+    <Content Include="fishing\img\5.jpg" />
+    <Content Include="fishing\img\50.jpg" />
+    <Content Include="fishing\img\51.jpg" />
+    <Content Include="fishing\img\52.jpg" />
+    <Content Include="fishing\img\53.jpg" />
+    <Content Include="fishing\img\54.jpg" />
+    <Content Include="fishing\img\55.jpg" />
+    <Content Include="fishing\img\56.jpg" />
+    <Content Include="fishing\img\57.jpg" />
+    <Content Include="fishing\img\58.jpg" />
+    <Content Include="fishing\img\59.jpg" />
+    <Content Include="fishing\img\6.jpg" />
+    <Content Include="fishing\img\60.jpg" />
+    <Content Include="fishing\img\61.jpg" />
+    <Content Include="fishing\img\62.jpg" />
+    <Content Include="fishing\img\63.jpg" />
+    <Content Include="fishing\img\64.jpg" />
+    <Content Include="fishing\img\65.jpg" />
+    <Content Include="fishing\img\66.jpg" />
+    <Content Include="fishing\img\67.jpg" />
+    <Content Include="fishing\img\68.jpg" />
+    <Content Include="fishing\img\69.jpg" />
+    <Content Include="fishing\img\7.jpg" />
+    <Content Include="fishing\img\70.jpg" />
+    <Content Include="fishing\img\71.jpg" />
+    <Content Include="fishing\img\72.jpg" />
+    <Content Include="fishing\img\73.jpg" />
+    <Content Include="fishing\img\74.jpg" />
+    <Content Include="fishing\img\75.jpg" />
+    <Content Include="fishing\img\76.jpg" />
+    <Content Include="fishing\img\77.jpg" />
+    <Content Include="fishing\img\78.jpg" />
+    <Content Include="fishing\img\79.jpg" />
+    <Content Include="fishing\img\8.jpg" />
+    <Content Include="fishing\img\80.jpg" />
+    <Content Include="fishing\img\81.jpg" />
+    <Content Include="fishing\img\82.jpg" />
+    <Content Include="fishing\img\83.jpg" />
+    <Content Include="fishing\img\84.jpg" />
+    <Content Include="fishing\img\85.jpg" />
+    <Content Include="fishing\img\86.jpg" />
+    <Content Include="fishing\img\9.jpg" />
+    <Content Include="fishing\index.html" />
+    <Content Include="fishing\js\bootstrap.min.js" />
+    <Content Include="fishing\js\cbpAnimatedHeader.js" />
+    <Content Include="fishing\js\classie.js" />
+    <Content Include="fishing\js\jquery-2.1.1.min.js" />
+    <Content Include="fishing\pages.html" />
+    <Content Include="fishing\service.html" />
+    <Content Include="fishing\shop.html" />
+    <Content Include="fishing\shop_detail.html" />
+    <Content Include="flatablelite\dist\assets\css\layout-dark.css" />
+    <Content Include="flatablelite\dist\assets\css\layout-rtl.css" />
+    <Content Include="flatablelite\dist\assets\css\plugins\animate.min.css" />
+    <Content Include="flatablelite\dist\assets\css\plugins\bootstrap.min.css" />
+    <Content Include="flatablelite\dist\assets\css\plugins\perfect-scrollbar.css" />
+    <Content Include="flatablelite\dist\assets\css\plugins\prism-coy.css" />
+    <Content Include="flatablelite\dist\assets\css\style.css" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-brands-400.svg" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-regular-400.svg" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-solid-900.svg" />
+    <Content Include="flatablelite\dist\assets\fonts\feather.svg" />
+    <Content Include="flatablelite\dist\assets\fonts\Flaticon.svg" />
+    <Content Include="flatablelite\dist\assets\fonts\pct.svg" />
+    <Content Include="flatablelite\dist\assets\images\auth\auth-logo-dark.png" />
+    <Content Include="flatablelite\dist\assets\images\auth\auth-logo.png" />
+    <Content Include="flatablelite\dist\assets\images\auth\img-auth-big.jpg" />
+    <Content Include="flatablelite\dist\assets\images\browser\chrome.png" />
+    <Content Include="flatablelite\dist\assets\images\browser\firefox.png" />
+    <Content Include="flatablelite\dist\assets\images\browser\ie.png" />
+    <Content Include="flatablelite\dist\assets\images\browser\opera.png" />
+    <Content Include="flatablelite\dist\assets\images\browser\safari.png" />
+    <Content Include="flatablelite\dist\assets\images\cd-arrow.svg" />
+    <Content Include="flatablelite\dist\assets\images\close.png" />
+    <Content Include="flatablelite\dist\assets\images\complete.png" />
+    <Content Include="flatablelite\dist\assets\images\favicon.ico" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\img-grd-gal-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\img-grd-gal-2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\img-grd-gal-3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\img-grd-gal-4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\img-grd-gal-5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\img-grd-gal-6.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-6.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-7.jpg" />
+    <Content Include="flatablelite\dist\assets\images\gallery-grid\masonry-8.jpg" />
+    <Content Include="flatablelite\dist\assets\images\hover-effect\triangle.svg" />
+    <Content Include="flatablelite\dist\assets\images\hover-effect\triangle2.svg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\l1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\l2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\l3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\l4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\l5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\l6.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\mixin.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\sl1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\sl2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\sl3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\sl4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\sl5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\sl6.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\smixin.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\v1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\v2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\v3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\light-box\v4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\loading.gif" />
+    <Content Include="flatablelite\dist\assets\images\logo-dark.png" />
+    <Content Include="flatablelite\dist\assets\images\logo-docs.png" />
+    <Content Include="flatablelite\dist\assets\images\logo-icon.png" />
+    <Content Include="flatablelite\dist\assets\images\logo-old.png" />
+    <Content Include="flatablelite\dist\assets\images\logo-thumb.png" />
+    <Content Include="flatablelite\dist\assets\images\logo.png" />
+    <Content Include="flatablelite\dist\assets\images\maintance\404.png" />
+    <Content Include="flatablelite\dist\assets\images\maintance\maintance.png" />
+    <Content Include="flatablelite\dist\assets\images\maintance\sark.svg" />
+    <Content Include="flatablelite\dist\assets\images\maintance\ship.svg" />
+    <Content Include="flatablelite\dist\assets\images\maintance\sparcle-1.png" />
+    <Content Include="flatablelite\dist\assets\images\maintance\sparcle-2.png" />
+    <Content Include="flatablelite\dist\assets\images\next.png" />
+    <Content Include="flatablelite\dist\assets\images\prev.png" />
+    <Content Include="flatablelite\dist\assets\images\product\prod-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\profile\bg-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\profile\bg-2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\profile\bg-3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\profile\bg-4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\profile\cover.jpg" />
+    <Content Include="flatablelite\dist\assets\images\slider\img-slide-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\slider\img-slide-2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\slider\img-slide-3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\slider\img-slide-4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\slider\img-slide-5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\slider\img-slide-6.jpg" />
+    <Content Include="flatablelite\dist\assets\images\slider\img-slide-7.jpg" />
+    <Content Include="flatablelite\dist\assets\images\ticket\p1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\ticket\p2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\ticket\p3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\ticket\p4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\ticket\p5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\avatar-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\avatar-2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\avatar-3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\avatar-4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\avatar-5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\cover.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\img-avatar-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\img-avatar-2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\user\img-avatar-3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\AUSTRALIA.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\blur-bg.png" />
+    <Content Include="flatablelite\dist\assets\images\widget\BRAZIL.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\dashborad-1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\dashborad-2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\dashborad-3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\dashborad-4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\dashborad-5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\emoticon.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\GERMANY.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\img-round1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\p1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\p2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\p3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\p4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\PHONE1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\PHONE2.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\PHONE3.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\PHONE4.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\profile-person1.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\slider5.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\slider6.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\slider7.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\UK.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\USA.jpg" />
+    <Content Include="flatablelite\dist\assets\images\widget\user-blur-bg.png" />
+    <Content Include="flatablelite\dist\assets\images\widget\wather2bottom.png" />
+    <Content Include="flatablelite\dist\assets\images\widget\watherbottom.png" />
+    <Content Include="flatablelite\dist\assets\images\widget\wathernature.png" />
+    <Content Include="flatablelite\dist\assets\images\widget\watherstar1.png" />
+    <Content Include="flatablelite\dist\assets\images\widget\watherstar2.png" />
+    <Content Include="flatablelite\dist\assets\json\2500.txt" />
+    <Content Include="flatablelite\dist\assets\json\file-upload.php" />
+    <Content Include="flatablelite\dist\assets\js\analytics.js" />
+    <Content Include="flatablelite\dist\assets\js\analytics.min.js" />
+    <Content Include="flatablelite\dist\assets\js\horizontal-menu.js" />
+    <Content Include="flatablelite\dist\assets\js\pages\chart-apex.js" />
+    <Content Include="flatablelite\dist\assets\js\pages\dashboard-main.js" />
+    <Content Include="flatablelite\dist\assets\js\pages\google-maps.js" />
+    <Content Include="flatablelite\dist\assets\js\pcoded.js" />
+    <Content Include="flatablelite\dist\assets\js\pcoded.min.js" />
+    <Content Include="flatablelite\dist\assets\js\plugins\apexcharts.min.js" />
+    <Content Include="flatablelite\dist\assets\js\plugins\bootstrap.min.js" />
+    <Content Include="flatablelite\dist\assets\js\plugins\gmaps.min.js" />
+    <Content Include="flatablelite\dist\assets\js\plugins\jquery-ui.min.js" />
+    <Content Include="flatablelite\dist\assets\js\plugins\perfect-scrollbar.min.js" />
+    <Content Include="flatablelite\dist\assets\js\plugins\prism.js" />
+    <Content Include="flatablelite\dist\assets\js\uikit.js" />
+    <Content Include="flatablelite\dist\assets\js\uikit.min.js" />
+    <Content Include="flatablelite\dist\assets\js\vendor-all.js" />
+    <Content Include="flatablelite\dist\assets\js\vendor-all.min.js" />
+    <Content Include="flatablelite\dist\auth-signin.html" />
+    <Content Include="flatablelite\dist\auth-signup.html" />
+    <Content Include="flatablelite\dist\bc_alert.html" />
+    <Content Include="flatablelite\dist\bc_badges.html" />
+    <Content Include="flatablelite\dist\bc_breadcrumb-pagination.html" />
+    <Content Include="flatablelite\dist\bc_button.html" />
+    <Content Include="flatablelite\dist\bc_card.html" />
+    <Content Include="flatablelite\dist\bc_carousel.html" />
+    <Content Include="flatablelite\dist\bc_collapse.html" />
+    <Content Include="flatablelite\dist\bc_extra.html" />
+    <Content Include="flatablelite\dist\bc_grid.html" />
+    <Content Include="flatablelite\dist\bc_modal.html" />
+    <Content Include="flatablelite\dist\bc_progress.html" />
+    <Content Include="flatablelite\dist\bc_spinner.html" />
+    <Content Include="flatablelite\dist\bc_tabs.html" />
+    <Content Include="flatablelite\dist\bc_toasts.html" />
+    <Content Include="flatablelite\dist\bc_tooltip-popover.html" />
+    <Content Include="flatablelite\dist\bc_typography.html" />
+    <Content Include="flatablelite\dist\chart-apex.html" />
+    <Content Include="flatablelite\dist\form_elements.html" />
+    <Content Include="flatablelite\dist\index.html" />
+    <Content Include="flatablelite\dist\layout-horizontal.html" />
+    <Content Include="flatablelite\dist\layout-vertical.html" />
+    <Content Include="flatablelite\dist\map-google.html" />
+    <Content Include="flatablelite\dist\sample-page.html" />
+    <Content Include="flatablelite\dist\tbl_bootstrap.html" />
+    <Content Include="flatablelite\gulpfile.js" />
+    <Content Include="flatablelite\src\assets\fonts\fa-brands-400.svg" />
+    <Content Include="flatablelite\src\assets\fonts\fa-regular-400.svg" />
+    <Content Include="flatablelite\src\assets\fonts\fa-solid-900.svg" />
+    <Content Include="flatablelite\src\assets\fonts\feather.svg" />
+    <Content Include="flatablelite\src\assets\fonts\Flaticon.svg" />
+    <Content Include="flatablelite\src\assets\fonts\pct.svg" />
+    <Content Include="flatablelite\src\assets\images\auth\auth-logo-dark.png" />
+    <Content Include="flatablelite\src\assets\images\auth\auth-logo.png" />
+    <Content Include="flatablelite\src\assets\images\auth\img-auth-big.jpg" />
+    <Content Include="flatablelite\src\assets\images\browser\chrome.png" />
+    <Content Include="flatablelite\src\assets\images\browser\firefox.png" />
+    <Content Include="flatablelite\src\assets\images\browser\ie.png" />
+    <Content Include="flatablelite\src\assets\images\browser\opera.png" />
+    <Content Include="flatablelite\src\assets\images\browser\safari.png" />
+    <Content Include="flatablelite\src\assets\images\cd-arrow.svg" />
+    <Content Include="flatablelite\src\assets\images\close.png" />
+    <Content Include="flatablelite\src\assets\images\complete.png" />
+    <Content Include="flatablelite\src\assets\images\favicon.ico" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\img-grd-gal-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\img-grd-gal-2.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\img-grd-gal-3.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\img-grd-gal-4.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\img-grd-gal-5.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\img-grd-gal-6.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-2.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-3.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-4.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-5.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-6.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-7.jpg" />
+    <Content Include="flatablelite\src\assets\images\gallery-grid\masonry-8.jpg" />
+    <Content Include="flatablelite\src\assets\images\hover-effect\triangle.svg" />
+    <Content Include="flatablelite\src\assets\images\hover-effect\triangle2.svg" />
+    <Content Include="flatablelite\src\assets\images\light-box\l1.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\l2.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\l3.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\l4.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\l5.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\l6.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\mixin.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\sl1.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\sl2.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\sl3.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\sl4.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\sl5.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\sl6.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\smixin.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\v1.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\v2.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\v3.jpg" />
+    <Content Include="flatablelite\src\assets\images\light-box\v4.jpg" />
+    <Content Include="flatablelite\src\assets\images\loading.gif" />
+    <Content Include="flatablelite\src\assets\images\logo-dark.png" />
+    <Content Include="flatablelite\src\assets\images\logo-docs.png" />
+    <Content Include="flatablelite\src\assets\images\logo-icon.png" />
+    <Content Include="flatablelite\src\assets\images\logo-old.png" />
+    <Content Include="flatablelite\src\assets\images\logo-thumb.png" />
+    <Content Include="flatablelite\src\assets\images\logo.png" />
+    <Content Include="flatablelite\src\assets\images\maintance\404.png" />
+    <Content Include="flatablelite\src\assets\images\maintance\maintance.png" />
+    <Content Include="flatablelite\src\assets\images\maintance\sark.svg" />
+    <Content Include="flatablelite\src\assets\images\maintance\ship.svg" />
+    <Content Include="flatablelite\src\assets\images\maintance\sparcle-1.png" />
+    <Content Include="flatablelite\src\assets\images\maintance\sparcle-2.png" />
+    <Content Include="flatablelite\src\assets\images\next.png" />
+    <Content Include="flatablelite\src\assets\images\prev.png" />
+    <Content Include="flatablelite\src\assets\images\product\prod-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\profile\bg-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\profile\bg-2.jpg" />
+    <Content Include="flatablelite\src\assets\images\profile\bg-3.jpg" />
+    <Content Include="flatablelite\src\assets\images\profile\bg-4.jpg" />
+    <Content Include="flatablelite\src\assets\images\profile\cover.jpg" />
+    <Content Include="flatablelite\src\assets\images\slider\img-slide-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\slider\img-slide-2.jpg" />
+    <Content Include="flatablelite\src\assets\images\slider\img-slide-3.jpg" />
+    <Content Include="flatablelite\src\assets\images\slider\img-slide-4.jpg" />
+    <Content Include="flatablelite\src\assets\images\slider\img-slide-5.jpg" />
+    <Content Include="flatablelite\src\assets\images\slider\img-slide-6.jpg" />
+    <Content Include="flatablelite\src\assets\images\slider\img-slide-7.jpg" />
+    <Content Include="flatablelite\src\assets\images\ticket\p1.jpg" />
+    <Content Include="flatablelite\src\assets\images\ticket\p2.jpg" />
+    <Content Include="flatablelite\src\assets\images\ticket\p3.jpg" />
+    <Content Include="flatablelite\src\assets\images\ticket\p4.jpg" />
+    <Content Include="flatablelite\src\assets\images\ticket\p5.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\avatar-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\avatar-2.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\avatar-3.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\avatar-4.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\avatar-5.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\cover.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\img-avatar-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\img-avatar-2.jpg" />
+    <Content Include="flatablelite\src\assets\images\user\img-avatar-3.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\AUSTRALIA.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\blur-bg.png" />
+    <Content Include="flatablelite\src\assets\images\widget\BRAZIL.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\dashborad-1.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\dashborad-2.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\dashborad-3.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\dashborad-4.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\dashborad-5.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\emoticon.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\GERMANY.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\img-round1.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\p1.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\p2.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\p3.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\p4.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\PHONE1.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\PHONE2.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\PHONE3.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\PHONE4.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\profile-person1.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\slider5.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\slider6.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\slider7.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\UK.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\USA.jpg" />
+    <Content Include="flatablelite\src\assets\images\widget\user-blur-bg.png" />
+    <Content Include="flatablelite\src\assets\images\widget\wather2bottom.png" />
+    <Content Include="flatablelite\src\assets\images\widget\watherbottom.png" />
+    <Content Include="flatablelite\src\assets\images\widget\wathernature.png" />
+    <Content Include="flatablelite\src\assets\images\widget\watherstar1.png" />
+    <Content Include="flatablelite\src\assets\images\widget\watherstar2.png" />
+    <Content Include="flatablelite\src\assets\json\2500.txt" />
+    <Content Include="flatablelite\src\assets\json\file-upload.php" />
+    <Content Include="flatablelite\src\assets\js\analytics.js" />
+    <Content Include="flatablelite\src\assets\js\analytics.min.js" />
+    <Content Include="flatablelite\src\assets\js\horizontal-menu.js" />
+    <Content Include="flatablelite\src\assets\js\pages\chart-apex.js" />
+    <Content Include="flatablelite\src\assets\js\pages\dashboard-main.js" />
+    <Content Include="flatablelite\src\assets\js\pages\google-maps.js" />
+    <Content Include="flatablelite\src\assets\js\pcoded.js" />
+    <Content Include="flatablelite\src\assets\js\pcoded.min.js" />
+    <Content Include="flatablelite\src\assets\js\uikit.js" />
+    <Content Include="flatablelite\src\assets\js\uikit.min.js" />
+    <Content Include="flatablelite\src\assets\js\vendor-all.js" />
+    <Content Include="flatablelite\src\assets\js\vendor-all.min.js" />
+    <Content Include="flatablelite\src\html\auth-signin.html" />
+    <Content Include="flatablelite\src\html\auth-signup.html" />
+    <Content Include="flatablelite\src\html\bc_alert.html" />
+    <Content Include="flatablelite\src\html\bc_badges.html" />
+    <Content Include="flatablelite\src\html\bc_breadcrumb-pagination.html" />
+    <Content Include="flatablelite\src\html\bc_button.html" />
+    <Content Include="flatablelite\src\html\bc_card.html" />
+    <Content Include="flatablelite\src\html\bc_carousel.html" />
+    <Content Include="flatablelite\src\html\bc_collapse.html" />
+    <Content Include="flatablelite\src\html\bc_extra.html" />
+    <Content Include="flatablelite\src\html\bc_grid.html" />
+    <Content Include="flatablelite\src\html\bc_modal.html" />
+    <Content Include="flatablelite\src\html\bc_progress.html" />
+    <Content Include="flatablelite\src\html\bc_spinner.html" />
+    <Content Include="flatablelite\src\html\bc_tabs.html" />
+    <Content Include="flatablelite\src\html\bc_toasts.html" />
+    <Content Include="flatablelite\src\html\bc_tooltip-popover.html" />
+    <Content Include="flatablelite\src\html\bc_typography.html" />
+    <Content Include="flatablelite\src\html\chart-apex.html" />
+    <Content Include="flatablelite\src\html\form_elements.html" />
+    <Content Include="flatablelite\src\html\index.html" />
+    <Content Include="flatablelite\src\html\layout-horizontal.html" />
+    <Content Include="flatablelite\src\html\layout-vertical.html" />
+    <Content Include="flatablelite\src\html\layouts\footer-bottom-link.html" />
+    <Content Include="flatablelite\src\html\layouts\footer.html" />
+    <Content Include="flatablelite\src\html\layouts\head-bottom-link.html" />
+    <Content Include="flatablelite\src\html\layouts\head.html" />
+    <Content Include="flatablelite\src\html\layouts\main.html" />
+    <Content Include="flatablelite\src\html\layouts\menu-list.html" />
+    <Content Include="flatablelite\src\html\map-google.html" />
+    <Content Include="flatablelite\src\html\sample-page.html" />
+    <Content Include="flatablelite\src\html\tbl_bootstrap.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fishing\fonts\fontawesome-webfont.eot" />
+    <Content Include="fishing\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fishing\fonts\fontawesome-webfont.woff" />
+    <Content Include="fishing\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fishing\fonts\FontAwesome.otf" />
+    <Content Include="fishing\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fishing\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fishing\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fishing\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fishing\fonts\OpenSans-Regular.ttf" />
+    <Content Include="flatablelite\.babelrc" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-brands-400.eot" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-brands-400.ttf" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-brands-400.woff" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-brands-400.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-regular-400.eot" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-regular-400.ttf" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-regular-400.woff" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-regular-400.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-solid-900.eot" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-solid-900.ttf" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-solid-900.woff" />
+    <Content Include="flatablelite\dist\assets\fonts\fa-solid-900.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\feather.eot" />
+    <Content Include="flatablelite\dist\assets\fonts\feather.ttf" />
+    <Content Include="flatablelite\dist\assets\fonts\feather.woff" />
+    <Content Include="flatablelite\dist\assets\fonts\Flaticon.eot" />
+    <Content Include="flatablelite\dist\assets\fonts\Flaticon.ttf" />
+    <Content Include="flatablelite\dist\assets\fonts\Flaticon.woff" />
+    <Content Include="flatablelite\dist\assets\fonts\Flaticon.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOUehpOqc.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOVuhpOqc.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOX-hpOqc.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOXehpOqc.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOXOhpOqc.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOXuhpOqc.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem8YaGs126MiZpBA-UFUZ0bbck.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem8YaGs126MiZpBA-UFVp0bbck.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem8YaGs126MiZpBA-UFVZ0b.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem8YaGs126MiZpBA-UFW50bbck.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem8YaGs126MiZpBA-UFWJ0bbck.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem8YaGs126MiZpBA-UFWp0bbck.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\opensans\mem8YaGs126MiZpBA-UFWZ0bbck.woff2" />
+    <Content Include="flatablelite\dist\assets\fonts\pct.eot" />
+    <Content Include="flatablelite\dist\assets\fonts\pct.ttf" />
+    <Content Include="flatablelite\dist\assets\fonts\pct.woff" />
+    <Content Include="flatablelite\dist\assets\json\cities.json" />
+    <Content Include="flatablelite\dist\assets\json\citynames.json" />
+    <Content Include="flatablelite\package-lock.json" />
+    <Content Include="flatablelite\package.json" />
+    <Content Include="flatablelite\src\assets\fonts\fa-brands-400.eot" />
+    <Content Include="flatablelite\src\assets\fonts\fa-brands-400.ttf" />
+    <Content Include="flatablelite\src\assets\fonts\fa-brands-400.woff" />
+    <Content Include="flatablelite\src\assets\fonts\fa-brands-400.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\fa-regular-400.eot" />
+    <Content Include="flatablelite\src\assets\fonts\fa-regular-400.ttf" />
+    <Content Include="flatablelite\src\assets\fonts\fa-regular-400.woff" />
+    <Content Include="flatablelite\src\assets\fonts\fa-regular-400.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\fa-solid-900.eot" />
+    <Content Include="flatablelite\src\assets\fonts\fa-solid-900.ttf" />
+    <Content Include="flatablelite\src\assets\fonts\fa-solid-900.woff" />
+    <Content Include="flatablelite\src\assets\fonts\fa-solid-900.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\feather.eot" />
+    <Content Include="flatablelite\src\assets\fonts\feather.ttf" />
+    <Content Include="flatablelite\src\assets\fonts\feather.woff" />
+    <Content Include="flatablelite\src\assets\fonts\Flaticon.eot" />
+    <Content Include="flatablelite\src\assets\fonts\Flaticon.ttf" />
+    <Content Include="flatablelite\src\assets\fonts\Flaticon.woff" />
+    <Content Include="flatablelite\src\assets\fonts\Flaticon.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOUehpOqc.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOVuhpOqc.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOX-hpOqc.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOXehpOqc.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOXOhpOqc.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem5YaGs126MiZpBA-UNirkOXuhpOqc.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem8YaGs126MiZpBA-UFUZ0bbck.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem8YaGs126MiZpBA-UFVp0bbck.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem8YaGs126MiZpBA-UFVZ0b.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem8YaGs126MiZpBA-UFW50bbck.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem8YaGs126MiZpBA-UFWJ0bbck.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem8YaGs126MiZpBA-UFWp0bbck.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\opensans\mem8YaGs126MiZpBA-UFWZ0bbck.woff2" />
+    <Content Include="flatablelite\src\assets\fonts\pct.eot" />
+    <Content Include="flatablelite\src\assets\fonts\pct.ttf" />
+    <Content Include="flatablelite\src\assets\fonts\pct.woff" />
+    <Content Include="flatablelite\src\assets\json\cities.json" />
+    <Content Include="flatablelite\src\assets\json\citynames.json" />
+    <Content Include="flatablelite\src\assets\scss\layout-dark.scss" />
+    <Content Include="flatablelite\src\assets\scss\layout-rtl.scss" />
+    <Content Include="flatablelite\src\assets\scss\settings\_custom-variables.scss" />
+    <Content Include="flatablelite\src\assets\scss\settings\_theme-variables.scss" />
+    <Content Include="flatablelite\src\assets\scss\style.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\bootstrap-overlay\_badge.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\bootstrap-overlay\_button.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\bootstrap-overlay\_card.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\bootstrap-overlay\_radiobox-checkbox.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\bootstrap-overlay\_switches.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\dashboard\_widget.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\font\_datta-icon.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\font\_feather.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\font\_flaticon.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\font\_fontawesome.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\font\_theme-font.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\layouts\_menu-lite.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_authentication.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_fullcalender.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_help-desk.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_icon-lauouts.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_image-cropper.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_maintaince.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_pages.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\pages\_user.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_bar-rating.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_data-tables.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_daterange.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_highcharts.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_lightbox.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_maxlength.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_notification.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_peitychart.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_perfect-scrollbar.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_pnotify.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_rangeslider.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_select2.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_sweatalert.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_tags-input.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\plugins\_wizard.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\_general.scss" />
+    <Content Include="flatablelite\src\assets\scss\themes\_generic.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62680</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44391/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
