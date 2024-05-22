@@ -24321,7 +24321,7 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
     border-bottom-right-radius: 60px;
 }
 
-.fixed-button {
+/*.fixed-button {
     position: fixed;
     bottom: -50px;
     right: 30px;
@@ -24330,11 +24330,11 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
     z-index: 9;
     transition: all 0.5s ease;
 }
-
-.fixed-button.active {
+*/
+/*.fixed-button.active {
     bottom: 50px;
     opacity: 1;
-}
+}*/
 
 .social-card {
     color: #fff;
